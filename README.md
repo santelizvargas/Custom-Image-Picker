@@ -18,13 +18,39 @@ To integrate the Custom Image Picker into your SwiftUI project, follow the insta
 
 ```swift
 struct ContentView: View {
-    @State private var selectedImages: [Image] = []
+    
+    @State private var profileImage: Image = Image(systemName: "cloud")
+    @State private var simpleImage: Image = Image(systemName: "cloud")
+    @State private var withButtonImage: Image = Image(systemName: "cloud")
     
     var body: some View {
-        VStack {
-            Text("Selected Images: \(selectedImages.count)")
-            
-            CustomImagePickerView(selectedImages: $selectedImages)
-        }
+        
+        CustomImagePicker(image: $profileImage, pickerStyle: .profile)
+            .frame(width: 200, height: 200)
+        
+        CustomImagePicker(image: $simpleImage, pickerStyle: .simplePicker)
+            .frame(width: 350, height: 200)
+        
+        CustomImagePicker(image: $withButtonImage, pickerStyle: .withButton)
+            .frame(width: 350, height: 200)
+        
+        Spacer()
     }
 }
+```
+
+## 🎬 Demo
+A demonstration is included to showcase the Custom Image Picker in action. Refer to the demo files for more information on how to use this component in your own projects
+
+<img width="335" alt="image" src="https://github.com/santelizvargas/Custom-Image-Picker/assets/79380665/b9021133-a12c-4014-9ffc-c08c06b3dc94">
+<img width="336" alt="image" src="https://github.com/santelizvargas/Custom-Image-Picker/assets/79380665/fd183780-47b5-43e1-90fe-6c0dfa5914ed">
+
+### Video Demo
+![Simulator Screen Recording - iPhone 15 Pro - 2024-02-27 at 21 15 39](https://github.com/santelizvargas/Custom-Image-Picker/assets/79380665/310f7cc9-7f1a-4844-b69a-9ffdb5d43c0e)
+
+
+## 🤝 Contributing
+If you'd like to contribute to this project, you're welcome to do so! Feel free to open an issue or submit a pull request with your improvements.
+
+## 📧 Contact
+If you have any questions or suggestions, feel free to contact the development team via [email](mailto:ushija6@gmail.com).
